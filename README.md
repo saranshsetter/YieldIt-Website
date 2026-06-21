@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YieldIt Website
 
-## Getting Started
+Marketing site for **YieldIt** — AI-powered marketing for HVAC contractors.
+Built with [Next.js](https://nextjs.org) (App Router), React, and Tailwind CSS.
 
-First, run the development server:
+---
+
+## ⚠️ Important: this is a Next.js app, not a plain HTML site
+
+You **cannot** open this with VS Code's "Live Server" extension — that only works
+for static `.html` files. This project has to be run by Next.js. Use the steps below.
+
+---
+
+## 👀 View the site locally (in VS Code)
+
+1. Open this folder in VS Code.
+2. Open the terminal (**Terminal → New Terminal**).
+3. The first time only, install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+5. Open **http://localhost:3000** in your browser.
+
+The page auto-refreshes as you edit files. Press `Ctrl + C` in the terminal to stop it.
+
+---
+
+## 🚀 Push changes to GitHub
+
+This folder is connected to https://github.com/saranshsetter/YieldIt-Website.
+Whenever you make changes, push them with three commands:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git add -A
+git commit -m "Describe what you changed"
+git push
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Don't upload files through the GitHub website anymore — that's what caused the
+> earlier mess. Always edit here in VS Code and push with the commands above.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Deploy it live (recommended: Vercel)
 
-## Learn More
+The easiest way to put this online is [Vercel](https://vercel.com/new):
 
-To learn more about Next.js, take a look at the following resources:
+1. Go to https://vercel.com/new and sign in with GitHub.
+2. Import the **YieldIt-Website** repository.
+3. Click **Deploy** — Vercel auto-detects Next.js. No config needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Every future `git push` will then redeploy the live site automatically.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📁 Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/            Pages & layout (app/page.tsx is the homepage)
+components/     Section components (Hero, Services, Testimonials, Pricing, …)
+lib/            Shared helpers
+public/         Static assets (images, icons)
+app/globals.css Global styles & animations
+```

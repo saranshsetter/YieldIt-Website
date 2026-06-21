@@ -4,7 +4,8 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import MissCallCallout from "@/components/MissCallCallout";
 import Pricing from "@/components/Pricing";
-import AuditForm from "@/components/AuditForm";
+import Testimonials from "@/components/Testimonials";
+import BookCall from "@/components/BookCall";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
         <HowItWorks />
         <MissCallCallout />
         <Pricing />
-        <AuditForm />
+        <Testimonials />
+        <BookCall />
       </main>
       <Footer />
     </>
