@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    :root { --bg:#FAF9F6; --surface:#fff; --s2:#F2F1EC; --line:#E6E4DE; --fg:#0F1115; --muted:#6B6F78; --accent:#5B5BFF; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#0F1115; --surface:#161920; --s2:#1C1F27; --line:#2A2E37; --fg:#ECEBE6; --muted:#8C909A; } }
+    * { box-sizing: border-box; }
+    body { margin:0; width:380px; background:var(--bg); color:var(--fg); font:13px/1.4 Inter, system-ui, sans-serif; }
+    header { display:flex; align-items:center; gap:8px; padding:10px 12px; border-bottom:1px solid var(--line); }
+    header b { font-family: Sora, Inter, sans-serif; font-size:14px; }
+    #lead { margin-left:auto; color:var(--muted); font-size:11px; max-width:170px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    input { width:100%; border:0; border-bottom:1px solid var(--line); background:transparent; color:var(--fg); padding:10px 12px; font:inherit; outline:none; }
+    #list { max-height:330px; overflow:auto; }
+    .item { padding:8px 12px; cursor:pointer; }
+    .item.sel { background:var(--s2); }
+    .t { font-weight:600; } .c { color:var(--muted); font-size:10px; margin-left:6px; }
+    .b { color:var(--muted); font-size:11px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    footer { display:flex; gap:6px; padding:8px 12px; border-top:1px solid var(--line); flex-wrap:wrap; }
+    button { border:1px solid var(--line); background:var(--surface); color:var(--fg); border-radius:7px; padding:5px 8px; font:inherit; font-size:11px; cursor:pointer; }
+    button:hover { border-color:var(--accent); }
+    #msg { padding:6px 12px; font-size:11px; color:var(--accent); min-height:14px; }
+    #err { padding:16px 12px; color:var(--muted); display:none; }
+    details { padding:0 12px 10px; color:var(--muted); font-size:11px; }
+    details input { border:1px solid var(--line); border-radius:6px; padding:5px 8px; margin-top:4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <svg width="18" height="18" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="none" stroke="#5B5BFF" stroke-width="3.2"/><circle cx="23" cy="9" r="3.6" fill="currentColor"/></svg>
+    <b>Setlo Snippets</b><span id="lead"></span>
+  </header>
+  <input id="q" placeholder="Search snippets… (↑↓ ↵ to copy)" autofocus />
+  <div id="err"></div>
+  <div id="list"></div>
+  <div id="msg"></div>
+  <footer>
+    <button id="clipSnippet">Clipboard → snippet</button>
+    <button id="clipNote">Clipboard → note on lead</button>
+    <button id="openApp">Open Setlo</button>
+  </footer>
+  <details id="settings"><summary>Settings</summary>
+    Setlo URL<input id="base" placeholder="https://your-setlo.vercel.app" />
+    <div style="margin-top:6px">Password (if set)<input id="password" type="password" /></div>
+    <button id="saveCfg" style="margin-top:8px">Save</button>
+  </details>
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Setlo Snippets",
+  "version": "0.1.0",
+  "description": "Setlo snippet deck and capture hotkeys. Talks to your Setlo app (local or deployed).",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Setlo Snippets"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:*/*",
+    "http://127.0.0.1:*/*",
+    "https://*.vercel.app/*"
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+K"
+      },
+      "description": "Open the snippet deck"
+    },
+    "capture-snippet": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Save selected text as a snippet"
+    },
+    "capture-note": {
+      "suggested_key": {
+        "default": "Alt+Shift+N"
+      },
+      "description": "Save selected text as a note on the active lead"
+    }
+  },
+  "optional_host_permissions": [
+    "https://*/*"
+  ]
+}
