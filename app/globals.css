@@ -1,88 +1,57 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), Georgia, serif;
+@custom-variant dark (&:where(.dark, .dark *));
 
-  --color-primary: #1D9E75;
-  --color-primary-dark: #085041;
-  --color-primary-light: #E1F5EE;
-  --color-dark: #0F1A15;
-  --color-text-primary: #111827;
-  --color-text-secondary: #6B7280;
-  --color-border: #E5E7EB;
-
-  --animate-fade-up: fade-up 0.6s ease forwards;
-  --animate-count-up: count-up 1.5s ease forwards;
+:root {
+  --bg: #FAF9F6;
+  --surface: #FFFFFF;
+  --surface-2: #F2F1EC;
+  --line: #E6E4DE;
+  --fg: #0F1115;
+  --muted: #6B6F78;
+  --accent: #5B5BFF;
+  --accent-soft: rgba(91, 91, 255, 0.10);
+  --danger: #E5484D;
+  --shadow: 0 1px 2px rgba(15, 17, 21, 0.04), 0 4px 16px rgba(15, 17, 21, 0.04);
+}
+.dark {
+  --bg: #0F1115;
+  --surface: #161920;
+  --surface-2: #1C1F27;
+  --line: #2A2E37;
+  --fg: #ECEBE6;
+  --muted: #8C909A;
+  --accent-soft: rgba(91, 91, 255, 0.18);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, sans-serif;
+  --shadow-soft: var(--shadow);
 }
 
-@keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-50%);
-  }
-}
+html, body { background: var(--bg); color: var(--fg); }
+body { font-feature-settings: "cv11", "ss01"; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+::selection { background: var(--accent-soft); }
+* { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
 
-.animate-marquee-vertical {
-  animation: marquee-vertical linear infinite;
-}
-
-.marquee-group:hover .animate-marquee-vertical {
-  animation-play-state: paused;
-}
-
-.marquee-mask {
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 18%,
-    black 82%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 18%,
-    black 82%,
-    transparent
-  );
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: #ffffff;
-  color: #111827;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+@utility btn { @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none cursor-pointer; }
+@utility btn-primary { @apply btn bg-accent text-white hover:brightness-110; }
+@utility btn-ghost { @apply btn text-fg hover:bg-surface-2; }
+@utility btn-outline { @apply btn border border-line bg-surface text-fg hover:bg-surface-2; }
+@utility input { @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-fg outline-none placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent-soft; }
+@utility label { @apply mb-1 block text-xs font-medium text-muted; }
+@utility card { @apply rounded-xl border border-line bg-surface shadow-soft; }
+@utility chip { @apply inline-flex items-center gap-1 rounded-full border border-line px-2 py-0.5 text-[11px] text-muted; }
+@utility kbd { @apply rounded border border-line bg-surface-2 px-1.5 py-0.5 font-mono text-[10px] text-muted; }
