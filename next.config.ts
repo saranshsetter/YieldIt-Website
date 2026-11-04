@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
-// Note: the Saransh EPK is a real route at /epk (app/epk), so the old
-// /epk -> /epk/index.html static redirect was removed.
-const nextConfig: NextConfig = {};
+// The deployed site's address opens the Saransh EPK (app/epk).
+// Temporary (non-permanent) redirect; the YieldIt homepage code is untouched in app/page.tsx.
+// To restore the YieldIt homepage at "/", delete the redirects() block below.
+const nextConfig: NextConfig = {
+  async redirects() {
+    return [{ source: "/", destination: "/epk", permanent: false }];
+  },
+};
 
 export default nextConfig;
