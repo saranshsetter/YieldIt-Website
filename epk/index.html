@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saransh · House Music · Electronic Press Kit</title>
+<meta name="description" content="Official EPK for Saransh, house music producer and DJ from St. Tropez, based in Brickell, Miami. Bio, music, discography, press photos and tech rider.">
+<meta name="theme-color" content="#0b2a3a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Saransh · Work Hard, Play Hard">
+<meta property="og:description" content="House music from the shoreline. Bio, music, discography, press photos and tech rider.">
+<meta property="og:image" content="assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <a class="logo" href="#top" aria-label="Saransh, back to top">SARANSH<span>.</span></a>
+  <nav aria-label="Sections"><ul id="navlinks">
+    <li><a href="#bio">Bio</a></li><li><a href="#music">Music</a></li><li><a href="#discography">Discography</a></li>
+    <li><a href="#rider">Tech Rider</a></li><li><a href="#photos">Photos</a></li>
+  </ul></nav>
+  <a class="btn btn-sun" href="#contact">Book</a>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <img class="hero-img" src="assets/hero.svg" alt="" fetchpriority="high">
+  <div class="hero-shade"></div>
+  <div class="hero-in">
+    <p class="eyebrow">Electronic Press Kit · <span data-bind="genre"></span></p>
+    <h1>Saransh</h1>
+    <p class="tag" data-bind="tagline"></p>
+    <div class="cta">
+      <a class="btn btn-sun" id="listen" href="#music">Listen</a>
+      <button class="btn btn-ghost" id="dlkit" type="button">Download Press Kit</button>
+      <a class="btn btn-ghost" href="#contact">Book</a>
+    </div>
+  </div>
+  <p class="base" data-bind="base"></p>
+</section>
+
+<section id="bio" class="sec">
+  <div class="wrap grid2">
+    <div><p class="kicker">01 · Biography</p><h2>Sun, bass &amp; a label of his own.</h2>
+      <div class="copy"><button class="btn btn-line" data-copy="short">Copy short bio</button> <button class="btn btn-line" data-copy="long">Copy long bio</button> <span id="copied" role="status" aria-live="polite"></span></div>
+      <ul class="highlights" id="highlights" aria-label="Highlights"></ul>
+    </div>
+    <div class="prose"><p class="lead" id="bio-short"></p><div id="bio-long"></div></div>
+  </div>
+  <div class="wrap"><div class="quotes" id="quotes"></div></div>
+</section>
+
+<section id="music" class="sec sand">
+  <div class="wrap">
+    <p class="kicker">02 · Music Style</p><h2>Chill, sunny, melodic house.</h2>
+    <div class="grid2 style">
+      <div>
+        <div class="tags" id="tags"></div>
+        <p class="sounds">Sounds like <b id="sounds"></b></p>
+        <div class="meters" id="meters"></div>
+      </div>
+      <div id="players"></div>
+    </div>
+  </div>
+</section>
+
+<section id="discography" class="sec">
+  <div class="wrap">
+    <p class="kicker">03 · Discography</p><h2>Releases, newest first.</h2>
+    <ol class="releases" id="releases"></ol>
+  </div>
+</section>
+
+<section id="rider" class="sec paper">
+  <div class="wrap" id="rider-print">
+    <div class="rider-head"><div><p class="kicker">04 · Tech Rider</p><h2>What Saransh needs to perform.</h2></div>
+      <button class="btn btn-ink no-print" id="dlrider" type="button">Download Tech Rider (PDF)</button></div>
+    <div class="rgrid">
+      <div class="card"><h3>Lineup</h3><ul id="lineup"></ul></div>
+      <div class="card"><h3>Sound check &amp; setup</h3><dl id="schedule"></dl></div>
+      <div class="card"><h3>Monitoring &amp; power</h3><p id="monitoring"></p><p id="power"></p></div>
+    </div>
+    <h3 class="sub">Stage plot <small>(audience view)</small></h3>
+    <figure class="plot"><svg id="plot" viewBox="0 0 600 340" role="img" aria-label="Stage plot: DJ booth centre stage, monitors left and right, power drop behind, vocal mic front right"></svg></figure>
+    <h3 class="sub">Input list</h3>
+    <div class="tablewrap"><table><thead><tr><th>Ch</th><th>Instrument / source</th><th>Mic or DI</th><th>Stand / notes</th></tr></thead><tbody id="inputs"></tbody></table></div>
+    <div class="rgrid two">
+      <div class="card"><h3>Artist brings</h3><ul id="bring"></ul></div>
+      <div class="card"><h3>Venue provides</h3><ul id="provide"></ul></div>
+    </div>
+    <p class="prod" id="prod"></p>
+  </div>
+</section>
+
+<section id="photos" class="sec">
+  <div class="wrap">
+    <p class="kicker">05 · Press Photos</p><h2>Thumbnails here, hi-res on tap.</h2>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section id="contact" class="sec contact">
+  <div class="wrap grid2">
+    <div><p class="kicker">Booking &amp; Press</p><h2>Let's make your summer longer.</h2>
+      <p class="lead"><a id="mail" href="#"></a><br><a id="tel" href="#"></a><br><a id="booklink" href="#" target="_blank" rel="noopener"></a></p>
+      <div class="socials" id="socials"></div>
+    </div>
+    <form id="form" class="form">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Event &amp; date<input name="event" placeholder="Venue, city, date"></label>
+      <label>Message<textarea name="msg" rows="4" required></textarea></label>
+      <button class="btn btn-sun" type="submit">Send booking enquiry</button>
+      <small>Opens your email app with the message ready to send.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><span>© <span id="yr"></span> Saransh. Work Hard, Play Hard.</span><a href="#top">Back to top ↑</a></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-x" id="lbx" aria-label="Close">×</button>
+  <img id="lbimg" alt=""><a class="btn btn-sun" id="lbdl" download>Download hi-res</a>
+</div>
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
